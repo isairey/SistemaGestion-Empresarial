@@ -1,87 +1,141 @@
-# DjangoSIGE [![Build Status](https://travis-ci.org/thiagopena/djangoSIGE.svg?branch=master)](https://travis-ci.org/thiagopena/djangoSIGE)
+# 🧾 DjangoSIGE — Sistema Integrado de Gestión Empresarial
 
-Sistema Integrado de Gestão Empresarial baseado em Django
+[![Build Status](https://travis-ci.org/thiagopena/djangoSIGE.svg?branch=master)](https://travis-ci.org/thiagopena/djangoSIGE)
 
-Projeto independente open-source desenvolvido em Python 3 no Windows, testado no GNU/Linux e Windows.
+**DjangoSIGE** es un sistema ERP (Enterprise Resource Planning) desarrollado con **Django (Python)**, diseñado para gestionar procesos empresariales como inventario, ventas, finanzas y facturación electrónica.
 
+---
 
-## Dependências
+## 🚀 Características principales
 
-- [Python](https://www.python.org/downloads/) - Versão 3.5+
-- [django](http://www.djangoproject.com) == 3.1.7
-- [geraldo](https://github.com/thiagopena/geraldo) - Geração de PDF para pedidos de venda/compra
-- [PySIGNFe](https://github.com/thiagopena/PySIGNFe) (Opcional) - Necessário para a geração de NF-e, NFC-e, comunicação com SEFAZ, geração do DANFE, etc.
-- [apache2](https://www.apache.org/) (Opcional)
-- [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) (Opcional)
+- 📦 Gestión de productos, clientes, proveedores y empresas  
+- 🔐 Sistema de autenticación (login/logout)  
+- 👤 Roles y permisos por usuario  
+- 🧾 Generación de presupuestos y órdenes de compra/venta en PDF  
+- 📊 Módulo financiero:
+  - Plan de cuentas  
+  - Flujo de caja  
+  - Registro de movimientos  
+- 📦 Control de inventario  
+- 🧮 Módulo fiscal:
+  - Generación y almacenamiento de facturas  
+  - Validación de XML (NF-e / NFC-e)  
+  - Emisión y cancelación de comprobantes  
+  - Integración con SEFAZ *(entorno de pruebas)*  
+- 🌐 Interfaz intuitiva y en idioma portugués  
 
-## Instalação:
+---
 
-0. Instalar as bibliotecas/pacotes (no Linux):
+## 🧱 Tecnologías utilizadas
+
+- **Python 3**
+- **Django 3.1.7**
+- **HTML / CSS / JavaScript**
+- **jQuery & DataTables**
+- **Bootstrap / Material Design**
+
+---
+
+## 📦 Dependencias
+
+- Python >= 3.5  
+- Django == 3.1.7  
+- geraldo (generación de PDFs)  
+- PySIGNFe *(opcional para facturación electrónica)*  
+- Apache2 + mod_wsgi *(opcional para producción)*  
+
+---
+
+## ⚙️ Instalación
+
+### 1️⃣ Instalar dependencias del sistema (Linux)
 
 ```bash
-sudo apt install -y libxml2 gcc python3-dev libxml2-dev libxslt1-dev zlib1g-dev python3-pip
 sudo apt update
+sudo apt install -y libxml2 gcc python3-dev libxml2-dev libxslt1-dev zlib1g-dev python3-pip
 ```
 
-1. Instalar dependências:
-
-```bash
+### 2️⃣ Instalar dependencias del proyecto
+```
 pip install -r requirements.txt
 ```
+### 3️⃣ Configuración del sistema
 
-2. Edite o conteúdo do arquivo **djangosige/configs/configs.py**
-
-3. Gere um `.env` local
-
-```bash
+Editar archivo:
+```
+djangosige/configs/configs.py
+```
+### 4️⃣ Generar variables de entorno
+```
 python contrib/env_gen.py
 ```
 
-
-4. Sincronize a base de dados:
-
-```bash
+### 5️⃣ Migraciones
+```
 python manage.py migrate
 ```
-
-5. Crie um usuário (Administrador do sistema):
-
-```bash
+### 6️⃣ Crear usuario administrador
+```
 python manage.py createsuperuser
 ```
-
-6. Teste a instalação carregando o servidor de desenvolvimento (http://localhost:8000 no navegador):
-
-```bash
+### 7️⃣ Ejecutar servidor
+```
 python manage.py runserver
 ```
 
-## Implementações
+Abrir en navegador:
+```
+👉 http://localhost:8000
+```
+---
 
-- Cadastro de produtos, clientes, empresas, fornecedores e transportadoras
-- Login/Logout
-- Criação de perfil para cada usuário.
-- Definição de permissões para usuários.
-- Criação e geração de PDF para orçamentos e pedidos de compra/venda
-- Módulo financeiro (Plano de Contas, Fluxo de Caixa e Lançamentos)
-- Módulo para controle de estoque
-- Módulo fiscal:
-    - Geração e armazenamento de notas fiscais
-    - Validação do XML de NF-e/NFC-es
-    - Emissão, download, consulta e cancelamento de NF-e/NFC-es **(Testar em ambiente de homologação)**
-    - Comunicação com SEFAZ (Consulta de cadastro, inutilização de notas, manifestação do destinatário)
-- Interface simples e em português
+## 🌐 Estado del proyecto
 
-## Créditos
+- 🚧 Proyecto en desarrollo activo
+- ⚠️ Algunas funciones fiscales requieren configuración adicional
 
-- [AdminBSBMaterialDesign](https://github.com/gurayyarar/AdminBSBMaterialDesign)
-- [geraldo](https://github.com/marinho/geraldo)
-- [jQuery-Mask-Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/)
-- [DataTables](https://datatables.net/)
-- [JQuery multiselect](http://loudev.com/)
+### 🛠️ Despliegue (Producción)
 
-## Ajuda
+Opcionalmente puedes usar:
+```
+Apache2
+mod_wsgi
+```
+---
 
-Para relatar bugs ou fazer perguntas utilize o [Issues](https://github.com/thiagopena/djangoSIGE/issues) ou via email thiagopena01@gmail.com
+## 🤝 Contribuciones
 
-Como este é um projeto em desenvolvimento, qualquer feedback será bem-vindo.
+Las contribuciones son bienvenidas:
+
+- Fork del repositorio
+- Crear una rama (feature/nueva-funcionalidad)
+- Realizar cambios
+- Enviar Pull Request
+
+---
+
+## 🧩 Créditos
+
+- AdminBSB Material Design
+- Geraldo
+- jQuery Mask Plugin
+- DataTables
+- jQuery Multiselect
+
+
+## 📩 Soporte
+
+🐛 Issues: https://github.com/isairey/SistemaGestion-Empresarial/issues
+📧 Email: isaireyes2003@gmail.com
+
+---
+
+## 👨‍💻 Autor
+
+**Isai Reyes**
+
+---
+
+## 📄 Licencia
+
+License MIT.
