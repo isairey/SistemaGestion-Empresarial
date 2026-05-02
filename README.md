@@ -125,8 +125,8 @@ Las contribuciones son bienvenidas:
 
 ## 📩 Soporte
 
-🐛 Issues: https://github.com/isairey/SistemaGestion-Empresarial/issues
-📧 Email: isaireyes2003@gmail.com
+- 🐛 Issues: https://github.com/isairey/SistemaGestion-Empresarial/issues
+- 📧 Email: isaireyes2003@gmail.com
 
 ---
 
